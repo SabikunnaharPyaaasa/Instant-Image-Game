@@ -15,7 +15,11 @@
         "src/app.js",
         "src/app2.js",
         "src/app3.js",
+        "src/app3next.js",
+        "src/app3next1.js",
         "src/app4.js",
-        "src/app5.js"
+        "src/app5.js",
+        "src/app6.js",
+        "src/app7.js"
     ]
 }

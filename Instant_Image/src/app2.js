@@ -56,6 +56,11 @@ var HelloWorldLayer2 = cc.Layer.extend({
         warehouse.setPosition(cc.p(size.width/2,size.height/2));
         this.addChild(warehouse,1);
 
+        var doorlayer = new cc.Sprite.create(res.doorlayer_png);
+        doorlayer.setAnchorPoint(cc.p(2,-0.35));
+        doorlayer.setPosition(cc.p(size.width/2,size.height/2));
+        this.addChild(doorlayer,1);
+
         var storage = new cc.Sprite.create(res.storage_png);
         storage.setAnchorPoint(cc.p(1.77,-0.3));
         storage.setPosition(cc.p(size.width/2,size.height/2));
@@ -105,8 +110,8 @@ var HelloWorldLayer2 = cc.Layer.extend({
         hand.setAnchorPoint(cc.p(0.2,7));
         hand.setPosition(cc.p(size.width/2,size.height/2));
         this.addChild(hand,1);
-        var hand_action = cc.Repeat.create(cc.MoveBy.create(0.04,cc.p(0,5)),32);
-        var hand_action1 = cc.Repeat.create(cc.MoveBy.create(0.04,cc.p(0,-5)),42);
+        var hand_action = cc.Repeat.create(cc.MoveBy.create(0.02,cc.p(0,5)),32);
+        var hand_action1 = cc.Repeat.create(cc.MoveBy.create(0.02,cc.p(0,-5)),42);
         var hand_action2 = cc.FadeOut.create(0.5);
         var sequence_hand = cc.Sequence.create(hand_action, hand_action1,hand_action2);
         hand.runAction(sequence_hand);

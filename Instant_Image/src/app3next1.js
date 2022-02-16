@@ -1,5 +1,5 @@
 
-var HelloWorldLayer3 = cc.Layer.extend({
+var HelloWorldLayernext1 = cc.Layer.extend({
     sprite:null,
     ctor:function () {
         //////////////////////////////
@@ -21,29 +21,38 @@ var HelloWorldLayer3 = cc.Layer.extend({
         buy.setPosition(cc.p(size.width/2,size.height/2));
         this.addChild(buy,1);
 
-        var earthDragon = new cc.Sprite.create(res.earthblue_png);
-        earthDragon.setAnchorPoint(cc.p(-0.75,0.5));
+        var earthDragon0 = new cc.Sprite.create(res.earthDragon_png);
+        earthDragon0.setAnchorPoint(cc.p(1.77,0.5));
+        earthDragon0.setPosition(cc.p(size.width/2,size.height/2));
+        this.addChild(earthDragon0,1);
+        var earthDragon0_action = cc.Repeat.create(cc.MoveBy.create(0.05,cc.p(0,0)),15);
+        var earthDragon0_action1 = cc.Repeat.create(cc.MoveBy.create(0.05,cc.p(-5,0)),15);
+        var sequence_earthDragon0 = cc.Sequence.create(earthDragon0_action,earthDragon0_action1);
+        earthDragon0.runAction(sequence_earthDragon0);
+
+        var earthDragon = new cc.Sprite.create(res.earthRed_png);
+        earthDragon.setAnchorPoint(cc.p(0.5,0.5));
         earthDragon.setPosition(cc.p(size.width/2,size.height/2));
         this.addChild(earthDragon,1);
-        var earthDragon_action1 = cc.Repeat.create(cc.MoveBy.create(0.01,cc.p(-5,0)),63);
-        var earthDragon_action3 = cc.ScaleBy.create(0.2,1.15,1.15);
+        earthDragon.setScale(1.18);
+        //var earthDragon_action1 = cc.Repeat.create(cc.MoveBy.create(0.01,cc.p(-5,0)),63);
+        //var earthDragon_action3 = cc.ScaleBy.create(0.2,1.15,1.15);
         var earthDragon_action2 = cc.Repeat.create(cc.MoveBy.create(0.03,cc.p(0,0)),25);
         var earthDragon_action4 = cc.ScaleBy.create(0.2,0.85,0.85);
-        var earthDragon_action5 = cc.Repeat.create(cc.MoveBy.create(0.01,cc.p(-5,0)),46);
-        var sequence_earthDragon = cc.Sequence.create(earthDragon_action1, earthDragon_action3,earthDragon_action2,earthDragon_action4,earthDragon_action5);
+        var earthDragon_action5 = cc.Repeat.create(cc.MoveBy.create(0.01,cc.p(-5,0)),57);
+        var sequence_earthDragon = cc.Sequence.create(earthDragon_action2,earthDragon_action4,earthDragon_action5);
         earthDragon.runAction(sequence_earthDragon);
 
 
         var earthDragon1 = new cc.Sprite.create(res.earthDragon_png);
-        earthDragon1.setAnchorPoint(cc.p(-2.1,0.5));
+        earthDragon1.setAnchorPoint(cc.p(-0.75,0.5));
         earthDragon1.setPosition(cc.p(size.width/2,size.height/2));
         this.addChild(earthDragon1,1);
 
-        var earthDragon1_action = cc.Repeat.create(cc.MoveBy.create(0.01,cc.p(-5,0)),60);
-        var earthDragon1_action1 = cc.Repeat.create(cc.MoveBy.create(0.04,cc.p(0,0)),25);
-        var earthDragon1_action2 = cc.Repeat.create(cc.MoveBy.create(0.01,cc.p(-5,0)),71);
+        var earthDragon1_action = cc.Repeat.create(cc.MoveBy.create(0.04,cc.p(0,0)),25);
+        var earthDragon1_action2 = cc.Repeat.create(cc.MoveBy.create(0.01,cc.p(-5,0)),65);
         var earthDragon1_action3 = cc.ScaleBy.create(0.2,1.15,1.15);
-        var sequence_earthDragon1 = cc.Sequence.create(earthDragon1_action,earthDragon1_action1,earthDragon1_action2,earthDragon1_action3);
+        var sequence_earthDragon1 = cc.Sequence.create(earthDragon1_action,earthDragon1_action2,earthDragon1_action3);
         earthDragon1.runAction(sequence_earthDragon1);
 
 
@@ -53,7 +62,7 @@ var HelloWorldLayer3 = cc.Layer.extend({
         earthDragon2.setPosition(cc.p(size.width/2,size.height/2));
         this.addChild(earthDragon2,1);
 
-        var earthDragon2_action = cc.Repeat.create(cc.MoveBy.create(0.015,cc.p(-5,0)),145);
+        var earthDragon2_action = cc.Repeat.create(cc.MoveBy.create(0.013,cc.p(-5,0)),145);
         var sequence_earthDragon2 = cc.Sequence.create(earthDragon2_action);
         earthDragon2.runAction(sequence_earthDragon2);
 
@@ -95,7 +104,7 @@ var HelloWorldLayer3 = cc.Layer.extend({
         {
             case ccui.Widget.TOUCH_BEGAN: 
             cc.log("pressed");
-            var scene = new HelloWorldScenenext();
+            var scene = new HelloWorldScene3();
            cc.director.pushScene(scene);
                    
            break;
@@ -121,10 +130,10 @@ function leftarrow()
     this.addChild(leftarrow,1);
 }
 
-var HelloWorldScene3 = cc.Scene.extend({
+var HelloWorldScenenext1 = cc.Scene.extend({
     onEnter:function () {
         this._super();
-        var layer = new HelloWorldLayer3();
+        var layer = new HelloWorldLayernext1();
         this.addChild(layer);
     }
 });

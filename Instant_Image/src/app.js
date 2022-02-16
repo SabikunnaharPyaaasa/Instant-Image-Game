@@ -11,6 +11,7 @@ var HelloWorldLayer = cc.Layer.extend({
         //    you may modify it.
         // ask the window size
         var size = cc.winSize;
+        cc.audioEngine.playMusic(res.Main_Music, true);
         var locked_cell_bg = new cc.Sprite.create(res.locked_cell_bg_png);
         locked_cell_bg.setAnchorPoint(cc.p(0.5,0.6));
         locked_cell_bg.setPosition(cc.p(size.width/2,size.height/2));
@@ -91,8 +92,8 @@ var HelloWorldLayer = cc.Layer.extend({
         hand.setAnchorPoint(cc.p(0.2,6));
         hand.setPosition(cc.p(size.width/2,size.height/2));
         this.addChild(hand,1);
-        var hand_action = cc.Repeat.create(cc.MoveBy.create(0.04,cc.p(0,5)),32);
-        var hand_action1 = cc.Repeat.create(cc.MoveBy.create(0.04,cc.p(0,-5)),42);
+        var hand_action = cc.Repeat.create(cc.MoveBy.create(0.02,cc.p(0,5)),32);
+        var hand_action1 = cc.Repeat.create(cc.MoveBy.create(0.02,cc.p(0,-5)),42);
         var hand_action2 = cc.FadeOut.create(0.5);
         var sequence_hand = cc.Sequence.create(hand_action, hand_action1,hand_action2);
         hand.runAction(sequence_hand);
